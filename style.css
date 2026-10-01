@@ -1,0 +1,37 @@
+/* RITM Tools — themes, RTL/LTR (logical properties), glass cards */
+:root{--bg:#f3f4ff;--fg:#1d1f33;--card:rgba(255,255,255,.62);--bd:rgba(108,123,255,.28);--pri:#5a69ee;--ok:#23855a;--err:#c93a52}
+[data-theme=dark]{--bg:#12131f;--fg:#e9eaf8;--card:rgba(42,44,76,.55);--bd:rgba(150,160,255,.22);--pri:#8e9bff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--fg);font:16px/1.7 Inter,system-ui,sans-serif;
+  background:radial-gradient(circle at 15% 0,rgba(108,123,255,.28),transparent 45%),radial-gradient(circle at 90% 20%,rgba(170,110,255,.2),transparent 40%),var(--bg)}
+[data-lang=fa] body{font-family:Vazirmatn,Tahoma,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--pri);outline-offset:2px}
+header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:.7rem 1.2rem;
+  background:var(--card);backdrop-filter:blur(14px);border-block-end:1px solid var(--bd)}
+.logo{font-weight:700;font-size:1.3rem;color:var(--pri)}
+header button,.btn,#clr{cursor:pointer;border:1px solid var(--bd);background:var(--card);border-radius:10px;padding:.4rem .9rem;transition:transform .15s}
+.btn{background:var(--pri);color:#fff;border:0}
+button:active{transform:scale(.95)}
+main{max-width:1100px;margin:auto;padding:1.2rem}
+#q,.row input:not([type=checkbox]),.row select,.row textarea{width:100%;padding:.6rem .9rem;border:1px solid var(--bd);border-radius:12px;background:var(--card);backdrop-filter:blur(8px)}
+.row input[type=color]{height:3rem;padding:.2rem}
+h2{margin-block:1.6rem .6rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:1rem}
+.card{position:relative;overflow:hidden;display:grid;gap:.3rem;padding:1.1rem;border:1px solid var(--bd);border-radius:18px;
+  background:var(--card);backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(60,70,160,.12);transition:transform .2s,box-shadow .2s}
+.card::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .25s;background:radial-gradient(180px circle at var(--x,50%) var(--y,50%),rgba(130,140,255,.3),transparent)}
+.card:hover{transform:translateY(-4px)}.card:hover::before{opacity:1}
+.card>*{position:relative}.ic{font-size:2rem}.card small{opacity:.75}
+.empty{text-align:center;font-size:1.2rem;padding:3rem 0}
+.tool{max-width:720px;margin:auto}
+.row{display:grid;gap:.3rem;margin-block:.8rem}.row:has([type=checkbox]){display:flex;gap:.5rem;align-items:center}
+.out{margin-block-start:1rem}.out pre{margin:0;padding:1rem;white-space:pre-wrap;word-break:break-word;font:inherit;border:1px solid var(--bd);border-radius:12px;background:var(--card)}
+.big pre{font-size:2.4rem;text-align:center}.err{color:var(--err)}
+.bar{height:8px;margin-block:.5rem;border-radius:8px;background:var(--bd)}.bar i{display:block;height:100%;border-radius:8px;transition:width .3s}
+footer{text-align:center;padding:2rem 1rem;opacity:.85}footer nav{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+#toast{position:fixed;top:1rem;left:50%;transform:translate(-50%,-150%);z-index:9;padding:.6rem 1.2rem;border-radius:12px;color:#fff;background:var(--pri);transition:transform .3s;pointer-events:none}
+#toast.show{transform:translate(-50%,0)}#toast.error{background:var(--err)}#toast.success{background:var(--ok)}
+@media(max-width:600px){main{padding:.8rem}header{padding:.6rem}}
+@media(prefers-reduced-motion:reduce){*,::before{transition:none!important;animation:none!important}}

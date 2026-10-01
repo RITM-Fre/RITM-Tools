@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RITM Tools</title>
+<meta name="description" content="">
+<meta name="theme-color" content="#6c7bff">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Vazirmatn:wght@400;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a href="#/" class="logo">⚡ RITM Tools</a>
+  <div>
+    <button id="lang" aria-label="Language"></button>
+    <button id="theme" aria-label="Theme">🌓</button>
+  </div>
+</header>
+<main>
+  <input id="q" type="search" aria-label="Search" autocomplete="off">
+  <div id="app"></div>
+</main>
+<footer>
+  <p data-i="priv"></p>
+  <nav>
+    <a href="#/about" data-i="about"></a>
+    <a href="#/contact" data-i="contact"></a>
+    <a href="#/privacy" data-i="privacy"></a>
+    <button id="clr" data-i="clear"></button>
+  </nav>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="script.js"></script>
+</body>
+</html>
